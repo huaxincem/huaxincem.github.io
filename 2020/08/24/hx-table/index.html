@@ -5,21 +5,21 @@
   
 
   
-  <title>hx_table | Hexo</title>
+  <title>hx_table | 华新前端组件文档</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="表格使用api   prop 名称 格式    tableData 表格数据 Array   select 是否显示多选 Boolean   isShowIndex 是否显示索引 Boolean   column 表头列表 Array   tableRowClassName 表格样式 Object   methods   事件 名称 入参    hx-click 单击 row   hx-dblcl">
+  <meta name="description" content="表格使用api   prop 名称 格式    tableData 表格数据 Array   select 是否显示多选 Boolean   isShowIndex 是否显示索引 Boolean   column 表头列表 Array   tableRowClassName 表格样式 Object   isLazy 是否支持懒 Boolean   childrenText 子节点名称 String">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hx_table">
 <meta property="og:url" content="http://yoursite.com/2020/08/24/hx-table/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="表格使用api   prop 名称 格式    tableData 表格数据 Array   select 是否显示多选 Boolean   isShowIndex 是否显示索引 Boolean   column 表头列表 Array   tableRowClassName 表格样式 Object   methods   事件 名称 入参    hx-click 单击 row   hx-dblcl">
+<meta property="og:site_name" content="华新前端组件文档">
+<meta property="og:description" content="表格使用api   prop 名称 格式    tableData 表格数据 Array   select 是否显示多选 Boolean   isShowIndex 是否显示索引 Boolean   column 表头列表 Array   tableRowClassName 表格样式 Object   isLazy 是否支持懒 Boolean   childrenText 子节点名称 String">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-24T08:51:27.591Z">
-<meta property="article:modified_time" content="2020-08-25T08:24:39.642Z">
+<meta property="article:modified_time" content="2020-09-02T07:05:53.589Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="华新前端组件文档" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -40,7 +40,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">华新前端组件文档</a>
       </h1>
       
     </div>
@@ -121,6 +121,31 @@
 <td align="center">表格样式</td>
 <td align="right">Object</td>
 </tr>
+<tr>
+<td>isLazy</td>
+<td align="center">是否支持懒</td>
+<td align="right">Boolean</td>
+</tr>
+<tr>
+<td>childrenText</td>
+<td align="center">子节点名称</td>
+<td align="right">String,默认值”children”</td>
+</tr>
+<tr>
+<td>isHasChildren</td>
+<td align="center">懒加载中判断是否有子节点</td>
+<td align="right">String,默认值”hasChildren”</td>
+</tr>
+<tr>
+<td>rowKey</td>
+<td align="center">判断子节点的值</td>
+<td align="right">String,Number,默认值”id”</td>
+</tr>
+<tr>
+<td>select</td>
+<td align="center">是否支持勾选</td>
+<td align="right">Boolean,默认值 false</td>
+</tr>
 </tbody></table>
 <h3 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h3><table>
 <thead>
@@ -145,13 +170,18 @@
 <td align="center">选择</td>
 <td align="right">obj, this.parentIndex</td>
 </tr>
+<tr>
+<td>loadTree</td>
+<td align="center">选择</td>
+<td align="right">tree, treeNode, resolve</td>
+</tr>
 </tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=<span class="string">&quot;home&quot;</span>&gt;</span><br><span class="line">    &lt;hx-table :tableData=<span class="string">&quot;tableData&quot;</span> :column=<span class="string">&quot;headerArray&quot;</span> @hx-click=<span class="string">&quot;handleClick&quot;</span>&gt;&lt;/hx-table&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      tableData: [</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">&#x27;海天味业&#x27;</span>,</span><br><span class="line">          <span class="built_in">type</span>: <span class="string">&#x27;上证&#x27;</span>,</span><br><span class="line">          price: <span class="string">&#x27;161&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">&#x27;立讯精密&#x27;</span>,</span><br><span class="line">          <span class="built_in">type</span>: <span class="string">&#x27;上证&#x27;</span>,</span><br><span class="line">          price: <span class="string">&#x27;56&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">&#x27;闻泰科技&#x27;</span>,</span><br><span class="line">          <span class="built_in">type</span>: <span class="string">&#x27;深证&#x27;</span>,</span><br><span class="line">          price: <span class="string">&#x27;141&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">      headerArray: [</span><br><span class="line">        &#123;</span><br><span class="line">          prop: <span class="string">&#x27;name&#x27;</span>,</span><br><span class="line">          label: <span class="string">&#x27;股票名称&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          prop: <span class="string">&#x27;type&#x27;</span>,</span><br><span class="line">          label: <span class="string">&#x27;股票类型&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">          prop: <span class="string">&#x27;price&#x27;</span>,</span><br><span class="line">          label: <span class="string">&#x27;股票价格&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    handleClick(row)&#123;</span><br><span class="line">      console.log(<span class="string">&quot;row&quot;</span>,row)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/hx-table/" data-id="ckececjvc0003p0vt4p0secou" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/hx-table/" data-id="ckel1gx65000238vt1t163wma" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,7 +221,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
     </div>
   </div>
 
@@ -204,19 +234,23 @@
       <ul>
         
           <li>
+            <a href="/2020/09/02/hx-head-Line/">hx-head-line</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/02/hx-dialog/">hx-dialog</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/02/hx-chooseperson/">hx-choose-person</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/25/hx-sd-datepicker/">hx_se_date_picker</a>
           </li>
         
           <li>
             <a href="/2020/08/25/hx-draw/">hx_draw</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/24/hx-pagination/">hx_pagination</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/24/hx-table/">hx_table</a>
           </li>
         
       </ul>

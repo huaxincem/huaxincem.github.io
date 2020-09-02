@@ -5,17 +5,17 @@
   
 
   
-  <title>Hexo</title>
+  <title>华新前端组件文档</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="华新前端组件文档">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="华新前端组件文档">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="华新前端组件文档" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,7 +36,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">华新前端组件文档</a>
       </h1>
       
     </div>
@@ -63,6 +63,211 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-hx-head-Line" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/hx-head-Line/" class="article-date">
+  <time datetime="2020-09-02T06:52:45.618Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/hx-head-Line/">hx-head-line</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="表格使用"><a href="#表格使用" class="headerlink" title="表格使用"></a>表格使用</h2><h3 id="api"><a href="#api" class="headerlink" title="api"></a>api</h3><table>
+<thead>
+<tr>
+<th>prop</th>
+<th align="center">名称</th>
+<th align="right">格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>titleName</td>
+<td align="center">标题名称</td>
+<td align="right">String</td>
+</tr>
+</tbody></table>
+<h3 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h3><table>
+<thead>
+<tr>
+<th>事件</th>
+<th align="center">名称</th>
+<th align="right">入参</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>on-close</td>
+<td align="center">关闭时触发的回调</td>
+<td align="right"></td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;el-dialog :visible.sync=<span class="string">&quot;visible&quot;</span> :show-close=<span class="string">&quot;false&quot;</span> width=<span class="string">&quot;55%&quot;</span>&gt;</span><br><span class="line">      &lt;head-line :titleName=<span class="string">&quot;titleName&quot;</span> @on-close=<span class="string">&quot;handleDialogClose&quot;</span>&gt;</span><br><span class="line">        &lt;slot&gt;&lt;/slot</span><br><span class="line">      &gt;&lt;/head-line&gt;</span><br><span class="line">    &lt;/el-dialog&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import headLine from <span class="string">&#x27;../../hx_head_line/src/index.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&#x27;HxDialog&#x27;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    headLine,</span><br><span class="line">  &#125;,</span><br><span class="line">  model: &#123;</span><br><span class="line">    prop: <span class="string">&#x27;visible&#x27;</span>,</span><br><span class="line">    event: <span class="string">&#x27;changeEvent&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    titleName: &#123;</span><br><span class="line">      <span class="built_in">type</span>: String,</span><br><span class="line">      default: <span class="string">&#x27;请输入弹框名称&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    visible: &#123;</span><br><span class="line">      <span class="built_in">type</span>: Boolean,</span><br><span class="line">      default: <span class="literal">false</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">handleDialogClose</span></span>() &#123;</span><br><span class="line">      this.<span class="variable">$emit</span>(<span class="string">&#x27;hxCloseDialog&#x27;</span>);</span><br><span class="line">      this.onClose();</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">onClose</span></span>() &#123;</span><br><span class="line">      this.<span class="variable">$emit</span>(<span class="string">&#x27;changeEvent&#x27;</span>, <span class="literal">false</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">&quot;scss&quot;</span> scoped&gt;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/02/hx-head-Line/" data-id="ckel1gx66000438vt8598fpnw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hx-dialog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/hx-dialog/" class="article-date">
+  <time datetime="2020-09-02T06:35:16.540Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/hx-dialog/">hx-dialog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="表格使用"><a href="#表格使用" class="headerlink" title="表格使用"></a>表格使用</h2><h3 id="api"><a href="#api" class="headerlink" title="api"></a>api</h3><table>
+<thead>
+<tr>
+<th>prop</th>
+<th align="center">名称</th>
+<th align="right">格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>visible(v-model)</td>
+<td align="center">控制显示</td>
+<td align="right">Boolean</td>
+</tr>
+<tr>
+<td>titleName</td>
+<td align="center">弹框名称</td>
+<td align="right">String</td>
+</tr>
+</tbody></table>
+<h3 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h3><table>
+<thead>
+<tr>
+<th>事件</th>
+<th align="center">名称</th>
+<th align="right">入参</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hxCloseDialog</td>
+<td align="center">关闭的回调</td>
+<td align="right"></td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;el-button @click=<span class="string">&quot;handleShowDialog&quot;</span>&gt;显示&lt;/el-button&gt;</span><br><span class="line">    &lt;hx-dialog v-model=<span class="string">&quot;isShowDialog&quot;</span> @hxCloseDialog=<span class="string">&quot;handleCloseDialog&quot;</span></span><br><span class="line">      &gt;测试文字&lt;/hx-dialog</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      isShowDialog: <span class="literal">false</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">handleShowDialog</span></span>() &#123;</span><br><span class="line">      this.isShowDialog = <span class="literal">true</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">handleCloseDialog</span></span>() &#123;</span><br><span class="line">      console.log(<span class="string">&#x27;关闭按钮回调&#x27;</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">&quot;scss&quot;</span> scoped&gt;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/02/hx-dialog/" data-id="ckel1gx5x000038vt7kchdxe7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hx-chooseperson" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/hx-chooseperson/" class="article-date">
+  <time datetime="2020-09-02T03:32:26.359Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/hx-chooseperson/">hx-choose-person</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="表格使用"><a href="#表格使用" class="headerlink" title="表格使用"></a>表格使用</h2><h3 id="api"><a href="#api" class="headerlink" title="api"></a>api</h3><table>
+<thead>
+<tr>
+<th>prop</th>
+<th align="center">名称</th>
+<th align="right">格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>treeBaseUrl</td>
+<td align="center">所在环境</td>
+<td align="right">String（’<a target="_blank" rel="noopener" href="http://portal.huaxincem.com/&#39;%EF%BC%89">http://portal.huaxincem.com/&#39;）</a></td>
+</tr>
+<tr>
+<td>visible</td>
+<td align="center">是否显示</td>
+<td align="right">Boolean</td>
+</tr>
+</tbody></table>
+<h3 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h3><table>
+<thead>
+<tr>
+<th>事件</th>
+<th align="center">名称</th>
+<th align="right">入参</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hx_getPerson</td>
+<td align="center">选中完成后接收的回调</td>
+<td align="right"></td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;el-button @click=<span class="string">&quot;handleButtonClick&quot;</span>&gt;显示隐藏&lt;/el-button&gt;</span><br><span class="line">    &lt;hx-draw</span><br><span class="line">      :is_show=<span class="string">&quot;is_show&quot;</span></span><br><span class="line">      :title=<span class="string">&quot;title&quot;</span></span><br><span class="line">      :width=<span class="string">&quot;drawWidth&quot;</span></span><br><span class="line">      @handleClose=<span class="string">&quot;handleDrawClose&quot;</span></span><br><span class="line">    &gt;</span><br><span class="line">      &lt;template v-slot:body&gt;</span><br><span class="line">        &lt;div&gt;里面填充内容&lt;/div&gt;</span><br><span class="line">      &lt;/template&gt;</span><br><span class="line">    &lt;/hx-draw&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      is_show: <span class="literal">false</span>,</span><br><span class="line">      title: <span class="string">&#x27;抽屉测试&#x27;</span>,</span><br><span class="line">      drawWidth: <span class="string">&#x27;100%&#x27;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">handleButtonClick</span></span>() &#123;</span><br><span class="line">      this.is_show = !this.is_show;</span><br><span class="line">      console.log(<span class="string">&#x27;is_show&#x27;</span>, this.is_show);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">handleDrawClose</span></span>() &#123;</span><br><span class="line">      this.is_show = <span class="literal">false</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">&quot;scss&quot;</span> scoped&gt;&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/02/hx-chooseperson/" data-id="ckel1gx63000138vt9mno1y1p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-hx-sd-datepicker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -105,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/25/hx-sd-datepicker/" data-id="ckececjv20002p0vteuro9b1z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/25/hx-sd-datepicker/" data-id="ckel1gx68000638vt6pq94ryy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -185,7 +390,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/25/hx-draw/" data-id="ckececjuu0000p0vt2tj9fij5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/25/hx-draw/" data-id="ckel1gx66000338vtanp79wvs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +480,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/hx-pagination/" data-id="ckececjv10001p0vt2h4f8bvr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/hx-pagination/" data-id="ckel1gx67000538vt0mcu1qfi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,6 +545,31 @@
 <td align="center">表格样式</td>
 <td align="right">Object</td>
 </tr>
+<tr>
+<td>isLazy</td>
+<td align="center">是否支持懒</td>
+<td align="right">Boolean</td>
+</tr>
+<tr>
+<td>childrenText</td>
+<td align="center">子节点名称</td>
+<td align="right">String,默认值”children”</td>
+</tr>
+<tr>
+<td>isHasChildren</td>
+<td align="center">懒加载中判断是否有子节点</td>
+<td align="right">String,默认值”hasChildren”</td>
+</tr>
+<tr>
+<td>rowKey</td>
+<td align="center">判断子节点的值</td>
+<td align="right">String,Number,默认值”id”</td>
+</tr>
+<tr>
+<td>select</td>
+<td align="center">是否支持勾选</td>
+<td align="right">Boolean,默认值 false</td>
+</tr>
 </tbody></table>
 <h3 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h3><table>
 <thead>
@@ -364,13 +594,18 @@
 <td align="center">选择</td>
 <td align="right">obj, this.parentIndex</td>
 </tr>
+<tr>
+<td>loadTree</td>
+<td align="center">选择</td>
+<td align="right">tree, treeNode, resolve</td>
+</tr>
 </tbody></table>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=<span class="string">&quot;home&quot;</span>&gt;</span><br><span class="line">    &lt;hx-table :tableData=<span class="string">&quot;tableData&quot;</span> :column=<span class="string">&quot;headerArray&quot;</span> @hx-click=<span class="string">&quot;handleClick&quot;</span>&gt;&lt;/hx-table&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      tableData: [</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">&#x27;海天味业&#x27;</span>,</span><br><span class="line">          <span class="built_in">type</span>: <span class="string">&#x27;上证&#x27;</span>,</span><br><span class="line">          price: <span class="string">&#x27;161&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">&#x27;立讯精密&#x27;</span>,</span><br><span class="line">          <span class="built_in">type</span>: <span class="string">&#x27;上证&#x27;</span>,</span><br><span class="line">          price: <span class="string">&#x27;56&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          name: <span class="string">&#x27;闻泰科技&#x27;</span>,</span><br><span class="line">          <span class="built_in">type</span>: <span class="string">&#x27;深证&#x27;</span>,</span><br><span class="line">          price: <span class="string">&#x27;141&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">      headerArray: [</span><br><span class="line">        &#123;</span><br><span class="line">          prop: <span class="string">&#x27;name&#x27;</span>,</span><br><span class="line">          label: <span class="string">&#x27;股票名称&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          prop: <span class="string">&#x27;type&#x27;</span>,</span><br><span class="line">          label: <span class="string">&#x27;股票类型&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">          prop: <span class="string">&#x27;price&#x27;</span>,</span><br><span class="line">          label: <span class="string">&#x27;股票价格&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    handleClick(row)&#123;</span><br><span class="line">      console.log(<span class="string">&quot;row&quot;</span>,row)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/24/hx-table/" data-id="ckececjvc0003p0vt4p0secou" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/24/hx-table/" data-id="ckel1gx65000238vt1t163wma" class="article-share-link">Share</a>
       
       
     </footer>
@@ -398,7 +633,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
     </div>
   </div>
 
@@ -411,19 +646,23 @@
       <ul>
         
           <li>
+            <a href="/2020/09/02/hx-head-Line/">hx-head-line</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/02/hx-dialog/">hx-dialog</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/02/hx-chooseperson/">hx-choose-person</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/25/hx-sd-datepicker/">hx_se_date_picker</a>
           </li>
         
           <li>
             <a href="/2020/08/25/hx-draw/">hx_draw</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/24/hx-pagination/">hx_pagination</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/24/hx-table/">hx_table</a>
           </li>
         
       </ul>
